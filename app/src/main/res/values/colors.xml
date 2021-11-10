@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!--  Theme  -->
+    <color name="primary_blue">#5E71F4</color>
+    <color name="light_blue">#374DEA</color>
+    <color name="dark_blue">#383B79</color>
+    <color name="dark_gray">#4A4A4A</color>
+    <color name="light_gray">#A0A0A0</color>
+    <color name="medium_gray">#565659</color>
+    <color name="snow">#FCFCFC</color>
+    <color name="transparent_white">#00FFFFFF</color>
+    <color name="marine_blue">#3D57EF</color>
+    <color name="ghost_white">#F8F8FF</color>
+    <color name="mercury">#E4E4E4</color>
+    <color name="harley_red">#DB3500</color>
+    <color name="dark_yellow">#F8C055</color>
+    <color name="bright_green">#90DC64</color>
+
+</resources>

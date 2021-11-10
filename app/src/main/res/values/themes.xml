@@ -1,0 +1,120 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Monkey" parent="Theme.MaterialComponents.Light">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/light_blue</item>
+        <item name="colorPrimaryVariant">@color/marine_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/light_gray</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_blue</item>
+        <item name="colorSecondaryVariant">@color/light_gray</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Other important colors. -->
+        <item name="colorError">@color/harley_red</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/dark_gray</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorOnBackground">@color/mercury</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryDark</item>
+
+        <!-- Bottom sheets. -->
+        <item name="bottomSheetDialogTheme">@style/Theme.Monkey.BottomSheetDialogTheme</item>
+
+        <!-- Radio buttons. -->
+        <item name="radioButtonStyle">@style/Widget.Monkey.RadioButton</item>
+
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/Theme.Monkey.MainActionBar</item>
+        <item name="android:toolbarStyle">@style/Theme.Monkey.MainToolBar</item>
+        <item name="android:actionOverflowMenuStyle">@style/Theme.Monkey.PopupOverflowMenu</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/Theme.Monkey.MainActionBar</item>
+        <item name="toolbarStyle">@style/Theme.Monkey.MainToolBar</item>
+        <item name="actionOverflowMenuStyle">@style/Theme.Monkey.PopupOverflowMenu</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="Theme.Monkey.MainActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="android:background">@drawable/ic_background_bottom_rounded</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/ic_background_bottom_rounded</item>
+    </style>
+
+    <style name="Theme.Monkey.MainToolBar" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="titleTextColor">@color/dark_blue</item>
+    </style>
+
+    <style name="Theme.Monkey.PopupOverflowMenu" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/ic_background_rounded_corners</item>
+    </style>
+
+    <!-- Bottom sheets -->
+    <style name="Theme.Monkey.BottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Theme.Monkey.ModalStyle</item>
+    </style>
+
+    <style name="Theme.Monkey.ModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/ic_background_rounded_dialog</item>
+    </style>
+
+    <!-- Radio buttons. -->
+    <style name="Widget.Monkey.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Monkey.RadioButton</item>
+    </style>
+
+    <style name="ThemeOverlay.Monkey.RadioButton" parent="">
+        <item name="colorOnSurface">@color/light_blue</item>
+        <item name="colorSecondary">@color/light_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/medium_gray</item>
+        <item name="android:fontFamily">@font/varela</item>
+    </style>
+
+    <style name="Theme.Monkey.PrimaryTextEdit" >
+        <item name="android:singleLine">true</item>
+        <item name="android:fontFamily">@font/varela</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/medium_gray</item>
+    </style>
+
+    <style name="Theme.Monkey.LargeTextView" >
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+        <item name="android:fontFamily">@font/varela</item>
+    </style>
+
+    <style name="Theme.Monkey.PrimaryButton" >
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:background">@drawable/ic_background_rounded_corners_mostly_blue</item>
+    </style>
+
+    <style name="Theme.Monkey.TertiaryButton" >
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+</resources>

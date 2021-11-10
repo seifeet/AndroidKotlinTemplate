@@ -1,0 +1,115 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'androidx.navigation.safeargs'
+apply from: '../versions.gradle'
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        applicationId 'work.monkey.kotlintemplate'
+        minSdkVersion 28
+        targetSdkVersion 31
+        versionCode 1
+        versionName "0.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    def localProperties = new Properties()
+    try {
+        localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+    } catch (Exception ignored) {
+        println "Failed to load local.properties"
+    }
+
+    signingConfigs {
+        release {
+            def keyStorePath = localProperties["keyStorePath"]
+            def localStorePassword = localProperties["storePassword"]
+            def localKeyAlias = localProperties["keyAlias"]
+            def localKeyPassword = localProperties["keyPassword"]
+
+            storeFile file(keyStorePath)
+            storePassword localStorePassword
+            keyAlias localKeyAlias
+            keyPassword localKeyPassword
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        debug {
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        def localAppDebug = localProperties["appDebug"]
+        def appDebug =  localAppDebug != null ? localAppDebug : false
+        println "App debug: $appDebug"
+
+        debug {
+            buildConfigField "String", "APP_DEBUG", "\"$appDebug\""
+        }
+
+        release {
+            buildConfigField "String", "APP_DEBUG", "\"$appDebug\""
+
+            debuggable false
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-defaults.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "com.android.support:recyclerview-v7:$recycler_view_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraints_layout_version"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    implementation "com.github.javafaker:javafaker:$javafaker_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "androidx.legacy:legacy-support-v4:$support_version"
+    
+    implementation "androidx.core:core-ktx:$ktx_version"
+
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    implementation "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
+
+    // Retrofit (API)
+    implementation "com.squareup.okhttp3:okhttp:$okhttp3_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
+
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_test_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
+}

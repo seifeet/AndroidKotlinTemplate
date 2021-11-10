@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainMenuFragment">
+
+    <activity
+        android:id="@+id/appSettingsActivity"
+        android:name="work.monkey.kotlintemplate.ui.AppSettingsActivity"
+        android:label="activity_app_settings"
+        tools:layout="@layout/activity_app_settings" />
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="work.monkey.kotlintemplate.ui.home.MainMenuFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_home_to_app_settings_activity"
+            app:destination="@id/appSettingsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/activatedFragment"
+        android:name="work.monkey.kotlintemplate.ui.auth.ActivatedFragment"
+        android:label="fragment_auth_activated"
+        tools:layout="@layout/fragment_auth_activated" >
+        <action
+            android:id="@+id/action_activated_to_home"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+
+</navigation>

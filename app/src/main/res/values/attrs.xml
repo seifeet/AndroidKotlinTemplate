@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CurrencyEditText">
+        <attr name="currencySymbol" format="string"/>
+        <attr name="currencySymbolColor" format="integer"/>
+        <attr name="currencyHint" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="OtpEditText">
+        <attr name="otpLength" format="integer|reference"/>
+        <attr name="otpPrimaryColor" format="color|reference" />
+        <attr name="otpSecondaryColor" format="color|reference" />
+        <attr name="otpTextColor" format="color|reference" />
+
+        <attr name="otpBoxStyle" format="string|reference" />
+
+        <attr name="otpMaskInput" format="boolean" />
+        <attr name="otpMaskCharacter" format="string|reference" />
+    </declare-styleable>
+
+</resources>
